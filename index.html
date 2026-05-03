@@ -319,7 +319,7 @@ footer {
 
 <nav>
   <div class="nav-brand">Scale<span>Co</span></div>
-  <a class="nav-cta" href="#aplicar">Quero mudar isso</a>
+  <a class="nav-cta" href="#aplicar">APLICAR PARA ADVISORY</a>
 </nav>
 
 <!-- HERO -->
@@ -802,7 +802,6 @@ document.querySelectorAll('.btn-g, .nav-cta').forEach(el => {
 // Form
 let currentStep = 1;
 let selectedOpts = {};
-let submitting = false;
 const totalSteps = 7;
 
 function openForm() {
@@ -870,12 +869,9 @@ function selectOpt(step, el, val) {
 }
 
 async function submitForm() {
-  if (submitting) return;
   clearErr('e7');
   const porque = document.getElementById('f_porque').value.trim();
   if (!porque) { showErr('e7', 'Escreva pelo menos uma frase.'); return; }
-
-  submitting = true;
 
   const dados = {
     nome: document.getElementById('f_nome').value.trim(),
